@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortfoliX | Builder</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <nav class="site-nav">
+            <a class="logo" href="index.html">PortfoliX</a>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="builder.html">Builder</a>
+                <a href="preview.html">Preview</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="builder-page">
+
+        <section class="page-heading">
+            <p class="eyebrow">PORTFOLIO BUILDER</p>
+            <h1>Customize your portfolio</h1>
+            <p>Enter your information and see the result update on the right.</p>
+        </section>
+
+        <section class="builder-layout">
+
+            <div class="editor-panel">
+
+                <form id="portfolioForm">
+
+                    <div class="form-section">
+                        <h2>Personal Information</h2>
+
+                        <label for="fullname">Full Name</label>
+                        <input
+                            type="text"
+                            id="fullname"
+                            name="fullname"
+                            placeholder="Enter your name"
+                            minlength="3"
+                            maxlength="50"
+                            required
+                        >
+
+                        <label for="title">Professional Title</label>
+                        <input
+                            type="text"
+                            id="title"
+                            name="title"
+                            placeholder="Software Engineer"
+                            maxlength="50"
+                            required
+                        >
+
+                        <label for="email">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            required
+                        >
+
+                        <label for="github">GitHub</label>
+                        <input
+                            type="url"
+                            id="github"
+                            name="github"
+                            placeholder="https://github.com/username"
+                            required
+                        >
+
+                        <label for="aboutme">About Me</label>
+                        <textarea
+                            id="aboutme"
+                            name="aboutme"
+                            placeholder="Write something about yourself"
+                            minlength="20"
+                            maxlength="500"
+                            required
+                        ></textarea>
+
+                        <label for="profile">Profile Picture</label>
+                        <input
+                            type="file"
+                            id="profile"
+                            name="profile"
+                            accept="image/*"
+                        >
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Skills</h2>
+
+                        <label for="skills">Skills</label>
+                        <input
+                            type="text"
+                            id="skills"
+                            name="skills"
+                            placeholder="HTML, CSS, JavaScript"
+                            required
+                        >
+
+                        <label for="technologies">Technology Stack</label>
+                        <textarea
+                            id="technologies"
+                            name="technologies"
+                            placeholder="Frontend: HTML, CSS, JavaScript&#10;Backend: Java&#10;Database: MySQL"
+                        ></textarea>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Project 1</h2>
+
+                        <label for="project1Name">Project Name</label>
+                        <input
+                            type="text"
+                            id="project1Name"
+                            name="project1Name"
+                            placeholder="Barangay Complaint Management System"
+                        >
+
+                        <label for="project1Description">Description</label>
+                        <textarea
+                            id="project1Description"
+                            name="project1Description"
+                            placeholder="Describe the project"
+                        ></textarea>
+
+                        <label for="project1Tech">Technologies</label>
+                        <input
+                            type="text"
+                            id="project1Tech"
+                            name="project1Tech"
+                            placeholder="Java, MySQL, REST API"
+                        >
+
+                        <label for="project1Github">GitHub Link</label>
+                        <input
+                            type="url"
+                            id="project1Github"
+                            name="project1Github"
+                            placeholder="https://github.com/username/project"
+                        >
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Project 2</h2>
+
+                        <label for="project2Name">Project Name</label>
+                        <input
+                            type="text"
+                            id="project2Name"
+                            name="project2Name"
+                            placeholder="Library Management System"
+                        >
+
+                        <label for="project2Description">Description</label>
+                        <textarea
+                            id="project2Description"
+                            name="project2Description"
+                            placeholder="Describe the project"
+                        ></textarea>
+
+                        <label for="project2Tech">Technologies</label>
+                        <input
+                            type="text"
+                            id="project2Tech"
+                            name="project2Tech"
+                            placeholder="Java, MySQL"
+                        >
+
+                        <label for="project2Github">GitHub Link</label>
+                        <input
+                            type="url"
+                            id="project2Github"
+                            name="project2Github"
+                            placeholder="https://github.com/username/project"
+                        >
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Design</h2>
+
+                        <label for="template">Template</label>
+                        <select id="template" name="template">
+                            <option value="modern">Modern</option>
+                            <option value="minimal">Minimal</option>
+                            <option value="creative">Creative</option>
+                        </select>
+
+                        <label for="primaryColor">Primary Color</label>
+                        <input
+                            type="color"
+                            id="primaryColor"
+                            name="primaryColor"
+                            value="#222222"
+                        >
+                    </div>
+
+                    <div class="builder-actions">
+                        <button class="btn btn-primary" type="submit">
+                            Save Portfolio
+                        </button>
+
+                        <button class="btn btn-danger" type="button" id="resetButton">
+                            Reset
+                        </button>
+
+                        <button class="btn btn-secondary" type="button" id="previewButton">
+                            Open Preview
+                        </button>
+                    </div>
+
+                    <p id="saveMessage" class="save-message"></p>
+
+                </form>
+
+            </div>
+
+            <div class="live-panel">
+
+                <div class="live-header">
+                    <span>LIVE PREVIEW</span>
+                </div>
+
+                <div id="builderPreview" class="portfolio-card template-modern">
+
+                    <div class="preview-hero">
+                        <img
+                            id="previewImage"
+                            class="preview-profile"
+                            src="assets/images/prof.png"
+                            alt="Profile picture"
+                        >
+
+                        <p id="previewTitle" class="preview-eyebrow">
+                            Software Engineer
+                        </p>
+
+                        <h2 id="previewName">
+                            John Vincent Telmosa
+                        </h2>
+
+                        <p id="previewAbout">
+                            Your introduction will appear here.
+                        </p>
+
+                        <a
+                            id="previewGithub"
+                            class="btn btn-primary"
+                            href="https://github.com/"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            GitHub
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 PortfoliX. Build. Customize. Present.</p>
+    </footer>
+
+    <script src="js/builder.js"></script>
+</body>
+</html>
